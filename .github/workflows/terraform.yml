@@ -58,6 +58,10 @@ jobs:
       #if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
       run: terraform apply -auto-approve #-input=false
       
-      # Checks that all Terraform configuration files adhere to a canonical format
-    - name: Terraform delete
-      run: terraform destroy #-check
+  terraform_destroy:
+    name: "Terraform_destroy"
+    if: ${{ github.event.inputs.action == 'Terraform_destroy' }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ github.event.inputs.resource }}
