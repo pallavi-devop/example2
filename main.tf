@@ -9,7 +9,7 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-  region     = "ap-south-1"
+  region     = "ap-northeast-1"
   access_key = "AKIAXOBVO4FVOKSV5VO4"
   secret_key = "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"
 }
@@ -53,7 +53,7 @@ resource "aws_route_table_association" "public_subnet_asso" {
 }
 
 resource "aws_instance" "mysec2" {
-  ami           = "ami-03a933af70fa97ad2"
+  ami           = "ami-0d979355d03fa2522"
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.public_subnet.id
 
