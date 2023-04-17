@@ -53,7 +53,7 @@ resource "aws_route_table_association" "public_subnet_asso" {
 }
 
 resource "aws_instance" "mysec2" {
-  ami           = "ami-0d979355d03fa2522"
+  ami           = "ami-03a933af70fa97ad2"
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.public_subnet.id
 
